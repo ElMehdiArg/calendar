@@ -1,0 +1,40 @@
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+
+<!-- <LayoutSnippet> -->
+<div class="container d-flex justify-content-center mt-5">
+  <div class="p-5 mb-4 col-md-12 bg-light rounded-3 mt-5 ">
+    <h1 class="mb-3">Calendrier</h1>
+
+    <a href="/calendar/{{user.provider}}/new" class="btn btn-primary btn-sm mb-3">Nouveau</a>
+    <table id="myTable" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Evenement</th>
+          <th scope="col">Début</th>
+          <th scope="col">Fin</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each events}}
+        <tr>
+          <td>{{this.subject}}</td>
+          <td>{{eventDateTime this.start.dateTime}}</td>
+          <td>{{eventDateTime this.end.dateTime}}</td>
+          <td><a href="/calendar/csv/generate-csv?eventId={{this.id}}" class="btn btn-light btn-sm">csv</a></td>
+
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+<!-- </LayoutSnippet> -->

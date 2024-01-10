@@ -1,0 +1,37 @@
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+
+<!-- <NewEventFormSnippet> -->
+<div class="container d-flex justify-content-center mt-5">
+  <div class="p-5 mb-4 col-md-4 bg-light rounded-3 mt-5 ">
+    <div class="container-fluid py-5">
+      <form method="POST" action="/calendar/user/add-event">
+
+        <div class="form-group">
+          <label>Evenement</label>
+          <input class="form-control" name="ev_subject" type="text" value="{{ newEvent.subject }}">
+        </div>
+
+        <div class="row mb-5">
+          <div class="col">
+            <div class="form-group">
+              <label>Début</label>
+              <input class="form-control" name="ev_start" type="datetime-local" value="{{ newEvent.start }}">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group">
+              <label>Fin</label>
+              <input class="form-control" name="ev_end" type="datetime-local" value="{{ newEvent.end }}">
+            </div>
+          </div>
+        </div>
+
+        <input class="btn btn-primary mr-2" type="submit" value="Create" />
+        <a class="btn btn-secondary" href="/calendar">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- </NewEventFormSnippet> -->

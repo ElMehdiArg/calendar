@@ -1,0 +1,63 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-4">
+      <div class="card border-0 shadow rounded-3">
+        <div class="card-body p-4 p-sm-5">
+          <h1 class="card-title text-center mb-5 fw-light">{{ formTitle }}</h1>
+          {{#if isRegister}}
+          <form action="/user/register" method="post">
+            {{else}}
+            <form action="/user/login" method="post">
+              {{/if}}
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Ex: mehdi">
+                <label for="floatingInput">Nom d'utilisateur</label>
+              </div>
+               {{#if isRegister}}
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                <label for="floatingInput">Addresse Email</label>
+              </div>
+              {{/if}}
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                <label for="floatingPassword">Mot de passe</label>
+              </div>
+        
+              <div class="form-floating mb-3">
+                {{#if isRegister}}
+                <p>Avez-vous un compte ? <a href="/user/login">Se connecter</a></p>
+                {{else}}
+                <p>N'avez-vous pas un compte ? <a href="/user/register">S'inscrire</a></p>
+                {{/if}}
+              </div>
+
+              {{#if isRegister}}
+              <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">S'inscrire</button>
+              </div>
+              {{else}}
+              <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Se connecter</button>
+              </div>
+              {{/if}}
+              <hr class="my-4">
+              <div class="row">
+                 <div class="col d-grid">
+                <a href="/auth/google/signin" class="btn btn-google btn-login text-uppercase">
+                  Google
+                </a>
+              </div>
+              <div class="col d-grid">
+                <a href="/auth/signin" class="btn btn-microsoft btn-login text-uppercase ">
+                  Microsoft
+                </a>
+              </div>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

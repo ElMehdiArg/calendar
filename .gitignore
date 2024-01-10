@@ -1,0 +1,4 @@
+/node_modules
+user.db
+tsconfig.json
+.env
